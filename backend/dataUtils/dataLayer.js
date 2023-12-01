@@ -22,7 +22,6 @@ async function getDataLayer(fastlyClientIp) {
 
     try {
         const response = await fetch(url, requestOptions);
-        console.log('********************* URL: ', url)
 
         if (!response.ok) {
             throw new Error(

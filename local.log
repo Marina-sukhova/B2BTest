@@ -1,9 +1,9 @@
 
 
-Wed Sep 27 2023 15:09:55:136 GMT-0400 (EDT) -- [WARNING] Detected instance of BrowserStackLocal Application, running in onlyAutomate mode to avoid port clash
-Wed Sep 27 2023 15:09:55:171 GMT-0400 (EDT) -- [WARNING] Skipping initialisation of configuration console because: port already in use by another Binary
-Wed Sep 27 2023 15:09:55:872 GMT-0400 (EDT) -- [SUCCESS] You can now access your local server(s) in our remote browser
+Fri Dec 01 2023 11:59:35:173 GMT-0500 (EST) -- [WARNING] Detected instance of BrowserStackLocal Application, running in onlyAutomate mode to avoid port clash
+Fri Dec 01 2023 11:59:35:297 GMT-0500 (EST) -- [WARNING] Skipping initialisation of configuration console because: port already in use by another Binary
+Fri Dec 01 2023 11:59:35:829 GMT-0500 (EST) -- [SUCCESS] You can now access your local server(s) in our remote browser
 
-Wed Sep 27 2023 15:09:56:926 GMT-0400 (EDT) -- Press Ctrl-C to exit
+Fri Dec 01 2023 11:59:37:178 GMT-0500 (EST) -- Press Ctrl-C to exit
 
 

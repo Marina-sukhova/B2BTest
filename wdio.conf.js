@@ -1,5 +1,5 @@
 const chromeModheader = require('chrome-modheader');
-const allure = require('allure-commandline')
+
 exports.config = {
     user: 'marinasukhova_5fyuFN',
     key: 'zv7eCWzcRo3qnKivf3vr',
@@ -70,7 +70,8 @@ exports.config = {
         // capabilities for local browser web tests
         browserName: 'chrome',
         'goog:chromeOptions': {
-            extensions: [chromeModheader.getEncodedExtension()]
+            extensions: [chromeModheader.getEncodedExtension()],
+            //args: ['--headless']
         }
     }],
     //
@@ -142,11 +143,10 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec', ['allure', {
-        outputDir: './allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
-    }]],
+    reporters: [['spec',{
+        addConsoleLogs: true,
+        showPreface: false,
+      } ]],
 
 
     //

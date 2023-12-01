@@ -25,19 +25,26 @@ function generateRandomIpAddressesInRange(min, max, count) {
     return ipAddresses;
 }
 
-module.exports = function generateRandomIpListsWithinRange(ipRanges, ipCountPerRange) {
+function getRandomIPAddresses(ipRanges) {
     const listOfLists = [];
-
     for (const range of ipRanges) {
         const minIpParts = range[0];
         const maxIpParts = range[1];
-        
-        const randomIpAddresses = generateRandomIpAddressesInRange(minIpParts, maxIpParts, ipCountPerRange);
+
+        const randomIpAddresses = generateRandomIpAddressesInRange(minIpParts, maxIpParts, 2);
         listOfLists.push(randomIpAddresses);
         listOfLists.push([minIpParts.join('.'), maxIpParts.join('.')]);
     }
+    const maxLength = Math.max(...listOfLists.map(innerArray => innerArray.length));
 
-    return listOfLists;
+    return listOfLists.flatMap(innerArray =>
+        innerArray.slice(0, maxLength).map(ipAddress => ({
+            ipAddress, fastlyClientIp: ipAddress,
+        }))
+    );
+}
+module.exports = {
+    getRandomIPAddresses,
 };
 
 
