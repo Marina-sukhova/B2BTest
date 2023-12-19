@@ -16,25 +16,21 @@ eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
 const desktopBatch = new BatchInfo(`Metered Assets Batch ${dateTime.getCurrentDateTime()}`);
 eyes.setBatch(desktopBatch);
 
-async function checkDesktopViews(ipAddress, UnivName) {
+async function checkElementView(ipAddress, UnivName) {
     try {
         // Check the specified view
-        await eyes.open(driver, UnivName);
-        eyes.setViewportSize({ width: 1200, height: 800 });
+        //await eyes.open(driver, UnivName);
+        //eyes.setViewportSize({ width: 1200, height: 800 });
         // Capture the current screenshot
         await eyes.check(`${ipAddress}`, Target.region(elementUtil.getElement('section.welcomeAdLayout:nth-child(4)')));
         
         // Close the Eyes session and wait for it to complete
-        await eyes.close();
-        
-        console.log(`Finished processing IP address: ${ipAddress} on ${deviceType}`);
+        //await eyes.close();
     } catch (error) {
         console.error(`Error in checkViews:`, error);
     }
-
-
 }
 
 module.exports = {
-    checkDesktopViews,
+    checkElementView, eyes
 };

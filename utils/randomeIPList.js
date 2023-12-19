@@ -36,10 +36,12 @@ function getRandomIPAddresses(ipRanges) {
         listOfLists.push([minIpParts.join('.'), maxIpParts.join('.')]);
     }
     const maxLength = Math.max(...listOfLists.map(innerArray => innerArray.length));
-
-    return listOfLists.flatMap(innerArray =>
+    
+    // listOflist is used to store lists of IP addresses.
+    // Looping Over Each Range in ipRanges.
+    return listOfLists.flatMap(innerArray =>  // Each inner array is sliced to maxLength 
         innerArray.slice(0, maxLength).map(ipAddress => ({
-            ipAddress, fastlyClientIp: ipAddress,
+            ipAddress, fastlyClientIp: ipAddress, //ipAddress and fastlyClientIp properties set to the same ipAddress value.
         }))
     );
 }

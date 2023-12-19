@@ -3,8 +3,8 @@ const chromeModheader = require('chrome-modheader');
 exports.config = {
     user: 'marinasukhova_5fyuFN',
     key: 'zv7eCWzcRo3qnKivf3vr',
-    //services: [['browserstack', { browserstackLocal: true }]],
-    services: ['chromedriver'],
+    services: [['browserstack', { browserstackLocal: true }]],
+    //services: ['chromedriver'],
 
     logLevel: 'error',
     //
@@ -74,6 +74,9 @@ exports.config = {
             //args: ['--headless']
         }
     }],
+    before: function (capabilities, specs) {
+        browser.url(chromeModheader.getAddHeaderUrl('fastly-client-ip', ''));
+      },
     //
     // ===================
     // Test Configurations
